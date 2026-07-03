@@ -1,0 +1,53 @@
+{
+  "name": "zendixrp-web",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "scripts": {
+    "predev": "node scripts/clean-next.mjs",
+    "dev": "next dev",
+    "prebuild": "node scripts/clean-next.mjs",
+    "build": "next build",
+    "prestart": "npm run release:check",
+    "start": "next start",
+    "start:local": "next start",
+    "release:check": "node --env-file=.env scripts/release-check.mjs && node --env-file=.env --import tsx scripts/release-db-check.ts",
+    "release:build": "npm run release:check && prisma generate && prisma db push && npm run db:seed && npm run build",
+    "lint": "eslint .",
+    "db:push": "prisma db push",
+    "db:migrate": "prisma migrate dev",
+    "db:seed": "tsx prisma/seed.ts",
+    "db:backup": "node --env-file=.env scripts/backup-database.mjs",
+    "db:studio": "prisma studio",
+    "setup": "prisma generate && prisma db push && npm run db:seed"
+  },
+  "dependencies": {
+    "@mantine/core": "^7.17.8",
+    "@mantine/form": "^7.17.8",
+    "@mantine/hooks": "^7.17.8",
+    "@mantine/notifications": "^7.17.8",
+    "@prisma/client": "^6.8.2",
+    "@tabler/icons-react": "^3.34.0",
+    "leaflet": "^1.9.4",
+    "next": "^15.3.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "zod": "^3.25.32"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.21",
+    "@types/node": "^22.15.21",
+    "@types/react": "^19.1.5",
+    "@types/react-dom": "^19.1.5",
+    "eslint": "^9.27.0",
+    "eslint-config-next": "^15.3.3",
+    "prisma": "^6.8.2",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  },
+  "overrides": {
+    "postcss": "^8.5.10"
+  }
+}

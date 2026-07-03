@@ -1,0 +1,186 @@
+📋 Server Regler på ZendixRP
+ZendixRP RP tror på, at en server med klare regler og retningslinjer kan tiltrække et bredere spektrum af spillere, og at dette vil resultere i en mere dynamisk, inkluderende og interessant spiloplevelse for alle.
+
+Vi har skrevet disse regler for at skabe en positiv og sjov spiloplevelse for alle spillere på serveren. Ved at etablere regler for adfærd og interaktion, kan vi minimere konflikter og skabe et miljø, hvor spillere kan trives og samarbejde.
+
+Navigér blandt vores regelsæt og dyk ned for at få en dybere forståelse for Zendix RP's reglement.
+❗ Aldersgrænsen på Zendix RP
+Vi kræver du er fyldt 16 år, og forbeholder os retten til at kræve ID ved tvivl.
+07-06-2026 16:18
+🔧 Generelle Regler
+Generelle regler på Zendix RP henviser til de regler, der gælder for alle spillere på serveren, uanset deres job eller rank. Disse regler omfatter opførsel, sprogbrug, hacking / snyd, respekt for andre spillere og andre overtrædelser, der kan resultere i sanktioner eller udelukkelse fra serveren.
+1.0 Mobning
+Zendix RP har 0-tolerance over for mobning og nedværdigelse af andre spillere. Mobning I RP tolereres heller ikke, da det skaber en negativ og ubehagelig RP-oplevelse for spillere, hvilket går imod Zendix RPs mål om at sikre en positiv og inkluderende spiloplevelse for alle.
+1.1 Tredjepartsprogrammer
+Alle former for tredjepartsprogrammer kan medføre permanent udelukkelse af serveren. Dette inkluderer bl.a. brug af "AI filer, mod-menuer, no-bushes, tracers" mm. Det gælder også, hvis man bruger Flawless Widescreen over 20% på "Third Person FOV".
+1.2 Bugs & Glitches
+Det er som spiller dit ansvar, at du selv rapporterer bugs & glitches. Fanges du i udnyttelse af ovenstående, risikerer du permanent udelukkelse uden mulighed for tilbagevenden.
+1.3 Ajourføring af regelsæt
+Du har som spiller selv ansvaret for at holde dig opdateret om nye og ændrede server regler. "Det vidste jeg ikke" er aldrig en undskyldning.
+1.4 AFK / Away From Keyboard
+Du må gerne være AFK på marken, men hvis der bliver taget betaling, og du ikke svarer, er det på eget ansvar. Det er kun tilladt at være AFK i minen. AFK andre steder er ikke tilladt.
+1.5 POV
+Man kan nu lave en ticket og spørger efter den anden parts POV, hvis det er godkendt af en Pov Ansvarlig.
+1.6 Søger Varme
+Det er ikke tilladt at lede efter eller opsøge “Varme” på nogen sider. Hvis det gentages, kan det føre til udelukkelse ban. Vi ønsker ikke at se, at spillere forsøger at mødes med eller kontakte disse personer.
+1.8 Gensidig respekt
+Lille venlig meddelelse til alle: Respekten for andre mennesker ser ud til at have taget en kort ferie og skal meget gerne finde vej tilbage – især når det gælder kvinderne på serveren.Derfor bliver der fra nu af slået lidt hårdere ned på den slags opførsel: 1 Gang 24 timers ban til at tænke over livet 2 Gang7 dage væk fra serveren (rigeligt med tid til refleksion) 3 gang Permanent farvel – uden unban, uden drama
+1.9 CK i form af FearRP
+Hvis du ignorerer FearRP i en 1v6-situation (f.eks. mod Romeo-enheder eller bandekidnapning), kan det resultere i CK. Dette gælder også politiet.
+07-06-2026 16:18
+🎭 Roleplay Regler
+Disse regler omfatter ofte at opretholde sin rolle i spillet, undgå at bruge out-of-character (OOC) information, undgå at påtvinge sin vilje eller kræfter på andre spillere eller situationer, undgå voldelig adfærd og respektere andre spillere. Disse regler er vigtige for at opretholde en positiv spiloplevelse og for at sikre, at alle spillere kan nyde spillet på en sjov og retfærdig måde.
+2.1 Meta-RP
+META-Gaming forstås i den forstand, at man som spiller benytter sig af viden, som fås OOC, ingame og dermed har en fordel ift. andre spillere.
+Grundet tidligere erfaringer med misbrug og mangel på evne til at administrere nu-nævnte, er det nu imod reglerne at man befinder sig på en Twitch eller YouTube stream, som foregår på Zendix RP, hvis man befinder sig ingame - For at undgå stream snipe og tvivl.
+2.2 NLR - New Life Rule
+NLR-reglen dikterer, at når en spiller dør i spillet, skal de "glemme" alt, hvad der skete før deres død, og de skal ikke hævne sig på den spiller eller gruppe, der dræbte dem. Spilleren skal også vente et bestemt antal minutter, før de kan vende tilbage til det sted, hvor de døde eller blev fjernet fra, for at undgå meta-gaming eller at udnytte information, som deres karakter ikke ville have kendt til i virkeligheden!
+2.3 RDM - Random Deathmatch
+For at undgå RDM på serveren skal spillerne altid have en gyldig grund til at angribe eller dræbe en anden spiller i spillet. Hvis en spiller overtræder RDM-reglen, kan de blive straffet med alt fra en advarsel til midlertidig eller permanent udelukkelse fra Zendix RP. Reglen er vigtig for at opretholde Zendix realistiske RP-scenarier og sikre, at alle spillere kan opleve en sjov og retfærdig spiloplevelse på serveren.
+2.4 VDM - Vehicle Deathmatch
+Ved VDM på serveren skal spillerne altid have en gyldig grund til at bruge køretøjer til at angribe eller dræbe en anden spiller i spillet. Hvis en spiller overtræder VDM-reglen, kan de blive straffet med alt fra en advarsel til midlertidig eller permanent udelukkelse fra serveren. Reglen er vigtig for at opretholde spillets realistiske elementer og sikre, at alle spillere kan nyde en sjov og retfærdig spiloplevelse på serveren.
+07-06-2026 16:18
+🎭 Roleplay Regler (Fortsat)
+2.5 Fear RP på Zendix RP
+Fear RP reglen dikterer, at man som spiller frygter for sit liv, og har det kært som var du i situationen i virkeligheden. Reglen fungerer således, at du som spiller ikke skal opføre dig som om at du har flere liv, og derfor sagtens kan risikere at dø i et RP-scenarie. Derfor er det på Zendix RP et gyldigt CK-grundlag, hvis man intuitivt vælger at begå selvmord, ved f.eks. at hoppe ud fra broer i undslippen for betjente, eller lignende sager.
+
+Er du under gunpoint, knife-point eller lignende? Så er det 100% tilladt at gøre modstand, men dør du i takt med brud på Fear RP hedder det CK. Formår du derimod at overmande vedkommende som tager dig under gunpoint, fortsætter RP'et som var det et almindeligt RP-drab.
+2.6 Powergaming RP
+Powergaming er, når du gør ting, som ikke er realistiske i RP, eller tvinger andre spillere ind i situationer uden mulighed for at reagere.
+2.7 Backseat Moderation RP
+Backseat moderation er, når du retter på andre spilleres RP eller regler, uden selv at være staff.
+2.8 Fail RP
+Failure To Roleplay (FailRP) omfatter brud på reglen som omfatter bevidst brud på rationel RP. Den som ødelægger den realistiske og engagerende spiloplevelse for andre straffes med op til 30 dage. FailRP opstår, når en spiller ikke overholder sin karakterrolle eller udfører handlinger, der strider imod Zendix RP's regler og ovenstående retningslinjer.
+2.9 OOC (Out Of Character) RP
+OOC betyder, at du snakker eller handler udenfor din karakter.OOC skal holdes til et minimum og må ikke ødelægge RP-oplevelsen.
+3.0 NLV (New Life Rule) RP
+Hvis din karakter dør, må du ikke huske, hvad der skete op til din død. Du må derfor ikke søge hævn eller bruge information fra før din død.
+07-06-2026 16:18
+🏢 Firma Regler
+Formålet med disse firma regler er at sikre en positiv, engagerende og realistisk spiloplevelse for alle medlemmer. Vi forventer, at alle spillere følger disse retningslinjer inden ansøgning, og respekterer både virksomheder og andre spillere på serveren. Læs venligst reglerne grundigt, og følg dem for at bidrage til et inkluderende og behageligt miljø for alle.
+3.1 Firma kassen
+Hævning fra firma kassen uden tilladelse af firma ansvarlig udløser fjernelse af Firma.
+3.2 Udlevering af bonus
+Bonus må max være 12.000.000kr. pr. person og procenten er max 30%.
+3.3 Bonus må kun gives en gang om ugen
+Ved givelse af bonus. Skal man lave liste fx: Bob Bong - 12 mil - solgt for 122.000.000 kr
+3.4 Du må maksimalt sælge 20%
+Du må maksimalt sælge 20% af din virksomhed, til en realistisk pris - det skal godkendes af en firma-ansvarlig.
+3.5 Det ikke tilladt at være i 2 firmaer's ledelse
+Det ikke tilladt at være i 2 firmaer's ledelse (Fx ledelse i prime og ledelse i lsc).
+3.6 Korruption/Abuse af rank
+Korruption/Abuse af rank er ikke tilladt og vil udløse fyrelse af job og 2 advarelser samt cooldown i 14 dage for at blive ansat i ny virksomhed.
+3.7 Alle som er ansat
+Alle som er ansat i firmaet, skal være inde på firma discorden.
+3.8 Når du er på arbejde
+Når du er på arbejde, skal du befinde dig på din arbejdsplads. Det udløser første gang 1. advarelse + kick - 2. gang 8 timers ban og 3. gang fjernelse af firma.
+3.9  Discord server til jeres firma
+Discord server til jeres firma skal sendes ind i jeres kanal discord
+4.1  Hvis firma ansvarlig joiner
+Hvis firma ansvarlig joiner jeres discord skal personen have rollen Firma ansvarlig og have alt adgang.
+07-06-2026 16:18
+🔫 Bande Regler
+5.1 Prøveperiode
+Alle starter i prøveperioden for at se hvordan i håndtere at være bande. Bande ansvarlige bestemmer hvornår i er klar til at gå fra prøveperiode til fuldgyldig bande. Som standart tager det ca. 7 dage. Under prøveperioden må man ikke lave konfliktoptrappende rp, eje en mark eller gå i konflikt/krig. I er en ny bande og derfor har intet magt i byen, hvilket vil sige i skal være ydmyg og kæmpe jer til magten!Under prøveperioden må man ikke lave konfliktoptrappende rp, eje en mark eller gå i konflikt/krig. I er en ny bande og derfor har intet magt i byen, hvilket vil sige i skal være ydmyg og kæmpe jer til magten!
+5.2 Maksimalt medlemstal
+Da det ikke er helt let at blive en bande, så ser vi også gerne at de godkendte bander er aktive. Er over 50% af banden ikke aktiv i mere end 4 dage, vil det resultere i nedlukning. Ser vi at i ikke er aktive ift. BandeRP og i fx kun sidder i lab så kan i risikere at blive lukket på det.
+5.3 Pusher
+Bandeansvarlige vil på ethvert tidspunkt kunne lukke en bande, hvis banden ikke kan finde ud af at lave RP. Dette gælder uanset hvor mange strikes banden har.
+5.4 Alliancer
+Alliancer er tilladt. Dette kan bruges i krige & konflikter eller bare til at sælge.
+5.5 Rush af Bande grund
+Man må gerne rushe en bande grund, hvis i er i overtal. Hvis man gør det uden, at være i overtal og man dør så er det CK.
+5.6 Zone & Mark Priser
+Zone Priserne & Mark Priser skal være realistiske, medmindre der har været tidligere kontroverser. Hvis der er problemer med en bande, kan man vælge at skambyde dem. (Hvis i er i tvivl, skal i oprette en bande ticket).
+5.7 Regler ved salg i zoner
+Salg af stoffer skal gøres, med sit banderank. Hvis det fjernes for at sælge, i andres zoner, bliver det set set som bugabuse. Salgstidspunkter for overtagelse af zoner: Hverdage: 15 - 23 Weekend: 12 - 02
+5.8 Flere marker.
+Det er ikke tilladt for en bande at eje flere marker. Dette er for at sikre, at andre bander også har mulighed for at eje marker og dermed skabe mere RP.
+5.9 Rush af Bande grund
+Det er ikke tilladt at kræve, at andre overfører zoner. Forsøg på at gøre dette kan medføre en strike. Overførsel af zoner er kun tilladt i to tilfælde: når en zone er blevet solgt, eller når man har tabt en krig eller konflikt.
+6.1 Mark Betaling + Konflikt
+Det er ikke tilladt at opkræve betaling på en mark, som allerede er ejet af en bande. Medmindre I har vist interesse for marken og informeret den pågældende bande ved et møde.Røvning må kun ske på personer som står AFK eller som nægter at betale. Hvis der er en aktiv konflikt, er det tilladt at kræve betaling på marken. Når man kræver mark betaling, er det også tilladt at bruge større våben. De skal dog ligges af med det samme efterfølgende. Se regel vedr. våbenbrug.
+6.2 Druglab
+KUN dem der ejer markken må købe lab - det koster 25M. Kontakt en ejendomsmægler for køb.
+6.3 Zoner under konflikt/krig
+Er en bande under konflikt/krig vil bandernes zoner blive låst frem til konflikten/krigens ende - for at undgå andre bander prøve at stjæle deres zoner, uden de har mulighed for at forsvare dem. Undtagelse er selvfølgelig hvis konflikten handler om
+07-06-2026 16:18
+🔫 Bande Regler 2
+6.4 Konflikter og Bandekrig
+En konflikt skal godkendes før start. Det gøres ved at oprette en bande ticket og kontakte en bande ansvarlig. I ticketen skal der forklares hvorfor det er nødvendigt at starte en konflikt, hvad årsagen til konflikten er samt ALLE beviser på de anklager der er blevet beskrevet. Når konflikten er godkendt, skal konflikttrappen følges og første scenarie må startes. Vælger en part fx at starte med skydevåben, så skal deres informeres i en ticket med bevis, før man selv forsætter med skydevåben. Før en konflikt udvikler sig fra konflikt -> krig, skal begge parter blive enige om det er den eneste løsning sammen med BA - i konflikt ticketen. En bandekrig skal aftales i support med banderne og BA. Her vil krigens omstændigheder, tidspunkter og regler blive diskuteret. Under planlægningsperioden og fra tiden mellem konflikt til krig, er der våbenhvile.
+6.5 Beviser på Konflikt
+Alt konfliktoptrappende rp skal kunne dokumenteres og vises til BA - for at se en rød tråd gennem hele konflikten.
+6.6 Cooldown efter Konflikt + Krig
+Vinder man konflikt/krig = 4 dages cooldown. Taber man sin konflikt/krig = 7 dages cooldown + fearrp overfor vinderen. Prøver en anden bande at starte konflikt med ens bande, mens man er under cooldown - er det tilladt at starte konflikt, skal kunne bevises i ticket. Men det er ikke tilladt som bande selv at gå ud og lave konfliktoptrapende RP, mens banden har cooldown.
+6.7 Anden part i konflikt
+Før en anden part deltager i en konflikt/krig SKAL det godkendes af BA. Årsager til andenpart kan være, men er ikke begrænset til: Alliancer, Medejerskab eller lign. Dette skal kunne dokumenteres at er aktuelt førinden konflikt start. En part skal trækkes med fra dag 1, og kan ikke trækkes ind midt konflikt. Har 1 bande en anden part med, får den anden bande også chancen. Med begrundelse selvfølgelig.
+6.8 Klips under konflikt/krig.
+BA sætter som krav på at i altid skal have klips på kills tilrådighed i mindst 24 timer under en konflikt/krig. Ses det ikke, kan det resultere i 14 dage eller mere ban.
+6.8 Bande tøj under konflikt/krig
+Under konflikt/bandekrig SKAL man være iklædt klar og tydelig bandemarkering. Har man EUP på serveren, skal dette benyttes. 1 undtagelse er dog på civile jobs - men ved afsluttet vagt, skal man iklædes bandemarkering. Er man ikke iklædt bande markering, kan det resultere i en bande strike.
+6.9 Medlemmer i krige/konflikter
+Man skal have været med i banden før konflikten starter. Person skal være på bande discorden før konflikten.
+6.9.1 Våbenbrug
+Man må bruge de våben, der står i #våbenklasser i bunden, men hvis våbnene misbruges, kan det medføre, at hele banden vil blive givet en strike. Alle klasser af våben må bruges til at tjekke marker (ikke konflikter).
+07-06-2026 16:18
+🔫 Bandekrig & Strikes
+7.1 Cooldown
+Skift til bande af samme type = 3 dage Skift af bande type = 4 dage ( Fx skift fra Gadebande til Rocker.) Lukning af bande = 4 dage . Skift Bande -> Politi = 2 dage. Skift Politi -> Bande = 5 dage. BA kan til enhver tid give ekstra cooldown!
+7.3 Strike System
+Strike 1: Advarsel. Strike 2: Advarsel. Strike 3: Sidste advarsel og resultere i lukning. Strikes udløber efter 1 måneder uden nye overtrædelser. Findes der modder, er det 1 strike pr. modder.
+7.4 Bande Ansvarlige
+Bande ansvarlig kan til enhver tid give bander eller medlemmer en straf trods ingen regel findes - Såfrem der sker noget, som vi bande ansvarlige ikke ønsker på serveren. Samt vil der også skulle være som minimum 1 BA på hver bandes discord for at håndhæve reglerne. BA rollen skal have Administrator perms. For at undgå meta gaming, vil BA som er bande medlemmer ikke have denne mulighed.
+07-06-2026 16:18
+⚠️ Specielle Regler
+Disse specielle regler dækker over særlige situationer og scenarier på Zendix RP, som kræver ekstra opmærksomhed og forståelse fra spillernes side.
+8.1 Safe Zones
+Safe zones (hospitaler, politistationer, firmaer, minen og Midtby Garage) er beskyttede områder. Konflikter eller skudepisoder er ikke tilladt her. Safe zones er ikke et tilflugtssted under flugt.
+8.2 Sælg og købt af IRL
+Handel med in-game genstande eller valuta for IRL-penge er forbudt og resulterer i permanent ban.
+8.3 Brug af /me, /do og /report
+Disse kommandoer (/me & /do) skal kun bruges til at beskrive realistiske RP-handlinger. /report skal ikke bruges til andet en hjælp. Misbrug af kommandoerne vil medføre advarsler.
+8.4 Ikke specificerede regler
+Server Ledelsen forbeholder sig retten til at håndhæve regler, som ikke er direkte nævnt i regelsættet, hvis de vurderer, at handlingen skader serverens RP eller balance
+8.5 Unødvendig brug af support
+Kontakt support kun ved legitime problemer. Misbrug af supportkanaler kan føre til advarsler eller andre sanktioner. (Hop ikke i 'Afventer' på grund af RDM, VDM osv. Opret i stedet en ticket der
+8.6 Klip før og efter scenariet
+Hvis du trækker en sag i support, skal du have beviser på hele forløbet. Godkendte beviser er videoklip, der viser både før og efter scenariet – ikke kun selve fejlen. Det gælder også kills, man skal have klip på alle kills man får i op til 48 timer efter et scenarie ellers modtager man 1 advarsel!
+8.7 Dobbelt Straf Under 16
+Spillere under 16 år modtager automatisk dobbelt straf, når de får advarsler. Det gælder uanset om du mangler én dag, flere måneder eller år til du bliver 16.
+8.8 Karaktertro
+Din karakter skal udvikles realistisk. Det er ikke tilladt at have modstridende roller som en bande og samtidig være politibetjent.
+8.9 Sund Fornuft
+Tænk realistisk. Ikke bryd din karakter, gør hvad du ville gøre i en rigtigt situation.
+8.9.1 Scam
+Scam er kun tilladt på følgende steder: Yellow page, Snapchat, Marketplace, TLF NR, Twitter osv Dark Chat er ikke tilladt at scamme på så snart noget at handlen er foregået på dark chat.
+8.9.2 RuleRP
+Sjove og kreative scenarier er tilladt, så længe de ikke bryder serverens overordnede regler.
+8.9.3 PvP Movement
+PvP Movement er tilladt.
+8.9.4 Clips
+Hvis der skal laves en support case eller ticket. Skal clipsne indsendes inden for 12 timer efter scenariet ellers vil det ikke blive brugt. (Det gælder 12 timer fra ticketen ikke straffen).Samme med clips i CK omfang, skal indsendes indenfor 1 time.
+8.9.5 Antal Deltager
+Grænser for hvor mange der kan deltage i forskellige røverier: Nationalbanken: Max. 10 personer.Almindelige banker: Max. 8 personer.Butikker: Max. 5 personer (ingen skydevåben tilladt). Andre Heist: Max. 7 personer
+8.9.6 Røverier af spillere
+Du må kun røve ulåste køretøjer, når ejeren ikke er til stede. Du må ikke røve noget fra Politiet eller Lægere.
+8.9.7 Forstyrrelse
+Forstyrrelse af whitelisted jobs FX Copbaiting er forbudt.
+8.9.8 Ansættelse af Whitelisted jobs
+Alle jobs skal udføres realistisk og med passene uniform.
+8.9.9 Cooldowns
+5 dages pause mellem politi og bandeskift. 7 dage ved bandeopløsning.
+9.1 Civile
+Våben må kun bruges i relevante RP-scenarier. Civile må ikke agere som bande eller gruppering, selvom de er flere personer eller venner samlet.
+9.2 Ingen puls - Ingen ID
+1 Korrekt svar ved ID-forespørgsel: Hvis du bliver spurgt om ID, skal du svare korrekt – medmindre du bruger et falsk ID. I så fald skal du kunne bevise det med klip (f.eks. et klip hvor du tager det med).2 Krav til falsk ID: Navnet på dit falske ID skal være realistisk. Hvis navnet er tydeligt opdigtet eller lavet for sjov, risikerer du minimum 48 timers ban. 3 Død eller levende – samme regler: Du skal altid svare, når du bliver spurgt om ID – uanset om din karakter er i live eller død. Politiet kan dog ikke bruge dit ID, hvis du er død
+9.3 SelvmordsRP
+SelvmordsRP medfører automatisk CK, f.eks. hvis du hopper ud fra en bygning i RP
+9.4 IBlood in, Blood out
+Bander kan ikke automatisk CK'e dig for at forlade. Det vil typisk være PK, medmindre en CK-ansvarlig godkender andet
+9.5 CK i form af FearRP
+Hvis du ignorerer FearRP i en 1v6-situation (f.eks. mod Romeo-enheder eller bandekidnapning), kan det resultere i CK. Dette gælder også politiet.
+9.6 Våbenbrug for civile
+Civile borgere må kun bære våben under heists, butik-/bankrøverier eller kidnapninger. Uden gyldig grund vil våben blive konfiskeret, og der gives en advarsel. Bander må bære våben hele tiden, men staff- eller bandeansvarlige kan vurdere, om våbenbrugen var passende. Brug af våben uden omtanke kan medføre konfiskering og en minimum 3-dages ban – uanset tidligere advarsler
+9.7 Misbrug af Tjek lommer
+Røveri via funktionen Tjek lommer kræver et klart og rimeligt grundlag. Du må ikke uden anledning gå hen til en spiller, bruge strips og fjerne hans ejendele.Hvis spilleren ikke svarer på FX-markedet, kan handlingen fortsætte, men brug af minen er strengt forbudt. Overtrædelse af denne regel medfører en straf på 2 dage.
+07-06-2026 16:18

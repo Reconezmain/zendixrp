@@ -1,0 +1,210 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  USER
+  STAFF
+  ADMIN
+}
+
+enum ApplicationStatus {
+  SENT
+  IN_REVIEW
+  APPROVED
+  REJECTED
+}
+
+enum StaffGroup {
+  OWNER
+  MANAGEMENT
+  DEVELOPER
+  ADMINISTRATOR
+  MODERATOR
+  SUPPORT
+}
+
+model User {
+  id               String           @id @default(cuid())
+  discordId        String           @unique
+  username         String
+  avatar           String?
+  role             UserRole         @default(USER)
+  discordRoles     Json?
+  roleSyncedAt     DateTime?
+  createdAt        DateTime         @default(now())
+  posts            Post[]
+  changelogEntries ChangelogEntry[]
+  applications     Application[]
+  sessions         Session[]
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  tokenHash String   @unique
+  userId    String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+model OAuthState {
+  id        String   @id
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}
+
+model SystemSetting {
+  key       String   @id
+  value     String
+  updatedAt DateTime @updatedAt
+}
+
+model RateLimit {
+  key       String   @id
+  count     Int      @default(1)
+  resetAt   DateTime
+  updatedAt DateTime @updatedAt
+
+  @@index([resetAt])
+}
+
+model Post {
+  id        String   @id @default(cuid())
+  title     String
+  slug      String   @unique
+  excerpt   String
+  category  String
+  content   String
+  authorId  String
+  author    User     @relation(fields: [authorId], references: [id], onDelete: Restrict)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([createdAt])
+  @@index([category])
+}
+
+model ChangelogEntry {
+  id        String   @id @default(cuid())
+  version   String
+  title     String
+  summary   String
+  changes   Json
+  published Boolean  @default(true)
+  authorId  String
+  author    User     @relation(fields: [authorId], references: [id], onDelete: Restrict)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([published, createdAt])
+}
+
+model RuleCategory {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  description String?
+  sortOrder   Int      @default(0)
+  active      Boolean  @default(true)
+  rules       Rule[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([active, sortOrder])
+}
+
+model Rule {
+  id         String       @id @default(cuid())
+  categoryId String
+  category   RuleCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  code       String?
+  title      String
+  content    String
+  sortOrder  Int          @default(0)
+  active     Boolean      @default(true)
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
+
+  @@index([categoryId, active, sortOrder])
+}
+
+model Application {
+  id              String            @id @default(cuid())
+  userId          String
+  user            User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  typeId          String?
+  applicationType ApplicationType?  @relation(fields: [typeId], references: [id], onDelete: SetNull)
+  type            String
+  answers         Json
+  status          ApplicationStatus @default(SENT)
+  adminNote       String?
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+
+  @@index([userId])
+  @@index([typeId])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model ApplicationType {
+  id              String        @id @default(cuid())
+  name            String
+  slug            String        @unique
+  description     String
+  category        String        @default("Job")
+  questions       Json
+  reviewerRoleIds Json          @default("[]")
+  active          Boolean       @default(true)
+  sortOrder       Int           @default(0)
+  applications    Application[]
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  @@index([active, sortOrder])
+}
+
+model StaffMember {
+  id          String     @id @default(cuid())
+  name        String
+  rank        String
+  group       StaffGroup @default(SUPPORT)
+  avatar      String?
+  discordTag  String
+  description String
+  sortOrder   Int        @default(0)
+  active      Boolean    @default(true)
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  @@index([active, sortOrder])
+  @@index([group, sortOrder])
+}
+
+model MapLocation {
+  id          String   @id @default(cuid())
+  externalId  String?  @unique
+  title       String
+  description String
+  category    String
+  icon        String   @default("pin")
+  color       String   @default("#2fdf82")
+  x           Float
+  y           Float
+  active      Boolean  @default(true)
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([active, category])
+  @@index([sortOrder])
+}
