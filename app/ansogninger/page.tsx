@@ -5,7 +5,6 @@ import { ApplicationForm } from '@/components/ApplicationForm';
 import { getCurrentUser } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
 import type { ApplicationQuestion, PublicApplicationType } from '@/lib/constants';
-import type { Prisma } from '@prisma/client';
 
 export const dynamic = 'force-dynamic';
 export const metadata = { title: 'Ansøgninger' };
@@ -16,7 +15,7 @@ type ApplicationTypeRow = {
   slug: string;
   description: string;
   category: string;
-  questions: Prisma.JsonValue;
+  questions: unknown;
   active: boolean;
   sortOrder: number;
 };
