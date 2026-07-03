@@ -3,6 +3,8 @@ import { safeEqual } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
 import { mapSyncSchema } from '@/lib/validation';
 
+type MapSyncTransaction = Pick<typeof prisma, 'mapLocation'>;
+
 export async function POST(request: Request) {
   const secret = process.env.MAP_SYNC_SECRET;
   if (!secret) return NextResponse.json({ error: 'MAP_SYNC_SECRET er ikke konfigureret' }, { status: 503 });
@@ -14,7 +16,7 @@ export async function POST(request: Request) {
   if (!parsed.success) return NextResponse.json({ error: parsed.error.issues[0]?.message || 'Ugyldige kortdata' }, { status: 400 });
   const externalIds = parsed.data.locations.map((location) => location.externalId);
 
-  await prisma.$transaction(async (tx) => {
+  await prisma.$transaction(async (tx: MapSyncTransaction) => {
     if (parsed.data.replace) {
       await tx.mapLocation.updateMany({ where: { externalId: { not: null }, NOT: { externalId: { in: externalIds } } }, data: { active: false } });
     }

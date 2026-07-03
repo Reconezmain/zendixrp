@@ -1,6 +1,8 @@
 import { createHash } from 'crypto';
 import { prisma } from '@/lib/prisma';
 
+type RateLimitTransaction = Pick<typeof prisma, 'rateLimit'>;
+
 function requestFingerprint(request: Request) {
   const forwarded = request.headers.get('cf-connecting-ip')
     || request.headers.get('x-real-ip')
@@ -14,7 +16,7 @@ export async function checkRateLimit(request: Request, scope: string, limit: num
   const key = `${scope}:${identity || requestFingerprint(request)}`;
   const resetAt = new Date(now.getTime() + windowMs);
 
-  const result = await prisma.$transaction(async (tx) => {
+  const result = await prisma.$transaction(async (tx: RateLimitTransaction) => {
     await tx.rateLimit.deleteMany({ where: { resetAt: { lt: now } } });
     const existing = await tx.rateLimit.findUnique({ where: { key } });
     if (!existing || existing.resetAt <= now) {

@@ -3,6 +3,8 @@ import { getCurrentUser, isStaff } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
 import { ruleCategorySchema, slugify } from '@/lib/validation';
 
+type RuleTransaction = Pick<typeof prisma, 'rule' | 'ruleCategory'>;
+
 async function authorized() {
   const user = await getCurrentUser();
   return Boolean(user && isStaff(user.role));
@@ -22,7 +24,7 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
   }
   const { rules, ...category } = parsed.data;
   const validIds = rules.flatMap((rule) => rule.id ? [rule.id] : []);
-  const updated = await prisma.$transaction(async (tx) => {
+  const updated = await prisma.$transaction(async (tx: RuleTransaction) => {
     await tx.ruleCategory.update({ where: { id }, data: { ...category, description: category.description || null, slug } });
     await tx.rule.deleteMany({ where: { categoryId: id, ...(validIds.length ? { id: { notIn: validIds } } : {}) } });
     for (const rule of rules) {
