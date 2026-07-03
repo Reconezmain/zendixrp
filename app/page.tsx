@@ -18,8 +18,17 @@ const features = [
   { icon: IconGavel, title: 'Fair regler', text: 'Tydelige rammer med plads til kreativitet — håndhævet ensartet og forklaret ordentligt.' },
 ];
 
+type HomePostRow = {
+  id: string;
+  slug: string;
+  title: string;
+  category: string;
+  excerpt: string;
+  createdAt: Date;
+};
+
 export default async function Home() {
-  const posts = await prisma.post.findMany({ take: 3, orderBy: { createdAt: 'desc' }, include: { author: { select: { username: true } } } });
+  const posts: HomePostRow[] = await prisma.post.findMany({ take: 3, orderBy: { createdAt: 'desc' }, select: { id: true, slug: true, title: true, category: true, excerpt: true, createdAt: true } });
   return (
     <>
       <HomeHero />
@@ -35,7 +44,7 @@ export default async function Home() {
       <section className="contentSection alt">
         <div className="sectionInner">
           <div className="sectionTopline"><SectionHeading eyebrow="Fra byen" title="Seneste opslag" text="Opdateringer, nyheder og glimt fra livet på ZendixRP." /><Button component={Link} href="/opslag" variant="subtle" rightSection={<IconArrowRight size={17} />}>Se alle opslag</Button></div>
-          <div className="postsGrid">{posts.map((post) => <Card component={Link} href={`/opslag/${post.slug}`} className="postCard" key={post.id}><Badge variant="light">{post.category}</Badge><h3>{post.title}</h3><p>{post.excerpt}</p><div className="postMeta"><span>{new Intl.DateTimeFormat('da-DK',{dateStyle:'medium'}).format(post.createdAt)}</span><IconArrowRight className="cardArrow" size={18} /></div></Card>)}</div>
+          <div className="postsGrid">{posts.map((post: HomePostRow) => <Card component={Link} href={`/opslag/${post.slug}`} className="postCard" key={post.id}><Badge variant="light">{post.category}</Badge><h3>{post.title}</h3><p>{post.excerpt}</p><div className="postMeta"><span>{new Intl.DateTimeFormat('da-DK',{dateStyle:'medium'}).format(post.createdAt)}</span><IconArrowRight className="cardArrow" size={18} /></div></Card>)}</div>
         </div>
       </section>
 

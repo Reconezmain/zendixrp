@@ -3,10 +3,91 @@ import { AdminDashboard } from '@/components/AdminDashboard';
 import { getCurrentUser, isStaff } from '@/lib/auth';
 import { getReviewableTypeIds } from '@/lib/application-permissions';
 import { prisma } from '@/lib/prisma';
-import type { ApplicationQuestion, PublicApplicationType } from '@/lib/constants';
+import type { ApplicationQuestion, PublicApplicationType, STATUS_LABELS } from '@/lib/constants';
+import type { MapLocationData } from '@/lib/map';
 
 export const dynamic = 'force-dynamic';
 export const metadata = { title: 'Admin' };
+
+type StaffGroupValue = 'OWNER' | 'MANAGEMENT' | 'DEVELOPER' | 'ADMINISTRATOR' | 'MODERATOR' | 'SUPPORT';
+
+type AdminPostRow = {
+  id: string;
+  title: string;
+  slug: string;
+  category: string;
+  excerpt: string;
+  content: string;
+  createdAt: Date;
+  updatedAt: Date;
+  author: { username: string };
+};
+
+type AdminApplicationRow = {
+  id: string;
+  type: string;
+  status: keyof typeof STATUS_LABELS;
+  adminNote: string | null;
+  answers: unknown;
+  createdAt: Date;
+  updatedAt: Date;
+  user: { id: string; username: string; avatar: string | null; discordId: string };
+  applicationType: { questions: unknown } | null;
+};
+
+type AdminStaffRow = {
+  id: string;
+  name: string;
+  rank: string;
+  group: StaffGroupValue;
+  avatar: string | null;
+  discordTag: string;
+  description: string;
+  sortOrder: number;
+  active: boolean;
+};
+
+type AdminApplicationTypeRow = {
+  id: string;
+  name: string;
+  slug: string;
+  description: string;
+  category: string;
+  questions: unknown;
+  reviewerRoleIds: unknown;
+  active: boolean;
+  sortOrder: number;
+};
+
+type AdminChangelogRow = {
+  id: string;
+  version: string;
+  title: string;
+  summary: string;
+  changes: unknown;
+  published: boolean;
+  createdAt: Date;
+  author: { username: string };
+};
+
+type AdminRuleRow = {
+  id: string;
+  code: string | null;
+  title: string;
+  content: string;
+  sortOrder: number;
+  active: boolean;
+};
+
+type AdminRuleCategoryRow = {
+  id: string;
+  name: string;
+  slug: string;
+  description: string | null;
+  sortOrder: number;
+  active: boolean;
+  rules: AdminRuleRow[];
+};
 
 export default async function AdminPage() {
   const user = await getCurrentUser();
@@ -88,16 +169,24 @@ export default async function AdminPage() {
           },
         })
       : [],
-  ]);
+  ]) as [
+    AdminPostRow[],
+    AdminApplicationRow[],
+    AdminStaffRow[],
+    AdminApplicationTypeRow[],
+    MapLocationData[],
+    AdminChangelogRow[],
+    AdminRuleCategoryRow[],
+  ];
 
-  const posts = postsRaw.map((post: typeof postsRaw[number]) => ({
+  const posts = postsRaw.map((post: AdminPostRow) => ({
     ...post,
     createdAt: post.createdAt.toISOString(),
     updatedAt: post.updatedAt.toISOString(),
   }));
 
   const applications = applicationsRaw.map(
-    (application: typeof applicationsRaw[number]) => ({
+    (application: AdminApplicationRow) => ({
       ...application,
       answers: application.answers as Record<string, string>,
       applicationType: application.applicationType
@@ -111,7 +200,7 @@ export default async function AdminPage() {
     }),
   );
 
-  const types = typesRaw.map((type: typeof typesRaw[number]) => ({
+  const types = typesRaw.map((type: AdminApplicationTypeRow) => ({
     id: type.id,
     name: type.name,
     slug: type.slug,
@@ -123,7 +212,7 @@ export default async function AdminPage() {
     sortOrder: type.sortOrder,
   })) as unknown as PublicApplicationType[];
 
-  const locations = locationsRaw.map((location: typeof locationsRaw[number]) => ({
+  const locations = locationsRaw.map((location: MapLocationData) => ({
     id: location.id,
     externalId: location.externalId,
     title: location.title,
@@ -137,7 +226,7 @@ export default async function AdminPage() {
     sortOrder: location.sortOrder,
   }));
 
-  const changelog = changelogRaw.map((entry: typeof changelogRaw[number]) => ({
+  const changelog = changelogRaw.map((entry: AdminChangelogRow) => ({
     id: entry.id,
     version: entry.version,
     title: entry.title,
@@ -148,14 +237,14 @@ export default async function AdminPage() {
     author: entry.author,
   }));
 
-  const rules = rulesRaw.map((category: typeof rulesRaw[number]) => ({
+  const rules = rulesRaw.map((category: AdminRuleCategoryRow) => ({
     id: category.id,
     name: category.name,
     slug: category.slug,
     description: category.description,
     sortOrder: category.sortOrder,
     active: category.active,
-    rules: category.rules.map((rule: typeof category.rules[number]) => ({
+    rules: category.rules.map((rule: AdminRuleRow) => ({
       id: rule.id,
       code: rule.code,
       title: rule.title,

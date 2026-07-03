@@ -3,6 +3,14 @@ import { getCurrentUser, isStaff } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
 import { ruleCategorySchema, slugify } from '@/lib/validation';
 
+type RuleInput = {
+  code?: string | null;
+  title: string;
+  content: string;
+  sortOrder: number;
+  active: boolean;
+};
+
 export async function GET() {
   const categories = await prisma.ruleCategory.findMany({ where: { active: true }, orderBy: [{ sortOrder: 'asc' }, { name: 'asc' }], include: { rules: { where: { active: true }, orderBy: [{ sortOrder: 'asc' }, { createdAt: 'asc' }] } } });
   return NextResponse.json(categories);
@@ -16,6 +24,6 @@ export async function POST(request: Request) {
   const baseSlug = slugify(parsed.data.name);
   const slug = await prisma.ruleCategory.findUnique({ where: { slug: baseSlug } }) ? `${baseSlug}-${Date.now().toString(36)}` : baseSlug;
   const { rules, ...category } = parsed.data;
-  const created = await prisma.ruleCategory.create({ data: { ...category, description: category.description || null, slug, rules: { create: rules.map((rule) => ({ code: rule.code || null, title: rule.title, content: rule.content, sortOrder: rule.sortOrder, active: rule.active })) } }, include: { rules: { orderBy: { sortOrder: 'asc' } } } });
+  const created = await prisma.ruleCategory.create({ data: { ...category, description: category.description || null, slug, rules: { create: rules.map((rule: RuleInput) => ({ code: rule.code || null, title: rule.title, content: rule.content, sortOrder: rule.sortOrder, active: rule.active })) } }, include: { rules: { orderBy: { sortOrder: 'asc' } } } });
   return NextResponse.json(created, { status: 201 });
 }

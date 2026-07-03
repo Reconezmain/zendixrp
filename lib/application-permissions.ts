@@ -6,6 +6,11 @@ type PermissionUser = {
   discordRoles: unknown;
 };
 
+type ReviewableTypeRow = {
+  id: string;
+  reviewerRoleIds: unknown;
+};
+
 export function jsonStringArray(value: unknown): string[] {
   return Array.isArray(value)
     ? value.filter((item): item is string => typeof item === 'string')
@@ -21,10 +26,10 @@ export function hasReviewerRole(user: PermissionUser, reviewerRoleIds: unknown) 
 // null means unrestricted because ADMIN always overrides type-specific roles.
 export async function getReviewableTypeIds(user: PermissionUser): Promise<string[] | null> {
   if (user.role === 'ADMIN') return null;
-  const types = await prisma.applicationType.findMany({
+  const types: ReviewableTypeRow[] = await prisma.applicationType.findMany({
     select: { id: true, reviewerRoleIds: true },
   });
-  return types.filter((type) => hasReviewerRole(user, type.reviewerRoleIds)).map((type) => type.id);
+  return types.filter((type: ReviewableTypeRow) => hasReviewerRole(user, type.reviewerRoleIds)).map((type: ReviewableTypeRow) => type.id);
 }
 
 export async function canReviewApplication(user: PermissionUser, applicationId: string) {

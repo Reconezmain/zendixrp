@@ -4,6 +4,14 @@ import { prisma } from '@/lib/prisma';
 import { ruleCategorySchema, slugify } from '@/lib/validation';
 
 type RuleTransaction = Pick<typeof prisma, 'rule' | 'ruleCategory'>;
+type RuleInput = {
+  id?: string;
+  code?: string | null;
+  title: string;
+  content: string;
+  sortOrder: number;
+  active: boolean;
+};
 
 async function authorized() {
   const user = await getCurrentUser();
@@ -23,11 +31,11 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
     slug = await prisma.ruleCategory.findFirst({ where: { slug: candidate, NOT: { id } } }) ? `${candidate}-${Date.now().toString(36)}` : candidate;
   }
   const { rules, ...category } = parsed.data;
-  const validIds = rules.flatMap((rule) => rule.id ? [rule.id] : []);
+  const validIds = rules.flatMap((rule: RuleInput) => rule.id ? [rule.id] : []);
   const updated = await prisma.$transaction(async (tx: RuleTransaction) => {
     await tx.ruleCategory.update({ where: { id }, data: { ...category, description: category.description || null, slug } });
     await tx.rule.deleteMany({ where: { categoryId: id, ...(validIds.length ? { id: { notIn: validIds } } : {}) } });
-    for (const rule of rules) {
+    for (const rule of rules as RuleInput[]) {
       const { id: ruleId, ...data } = rule;
       if (ruleId) await tx.rule.updateMany({ where: { id: ruleId, categoryId: id }, data });
       else await tx.rule.create({ data: { ...data, categoryId: id } });
