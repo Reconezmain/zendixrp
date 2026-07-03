@@ -5,34 +5,48 @@ import { ApplicationForm } from '@/components/ApplicationForm';
 import { getCurrentUser } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
 import type { ApplicationQuestion, PublicApplicationType } from '@/lib/constants';
+import type { Prisma } from '@prisma/client';
 
 export const dynamic = 'force-dynamic';
 export const metadata = { title: 'Ansøgninger' };
 
+type ApplicationTypeRow = {
+  id: string;
+  name: string;
+  slug: string;
+  description: string;
+  category: string;
+  questions: Prisma.JsonValue;
+  active: boolean;
+  sortOrder: number;
+};
+
 export default async function ApplicationsPage({ searchParams }: { searchParams: Promise<{ authError?: string }> }) {
-  const [user, params, rawTypes] = await Promise.all([
+  const [user, params] = await Promise.all([
     getCurrentUser(),
     searchParams,
-    prisma.applicationType.findMany({
-      where: { active: true },
-      orderBy: [{ sortOrder: 'asc' }, { name: 'asc' }],
-      select: {
-        id: true,
-        name: true,
-        slug: true,
-        description: true,
-        category: true,
-        questions: true,
-        active: true,
-        sortOrder: true,
-      },
-    }),
   ]);
 
-  const types = rawTypes.map((type) => ({
+  const rawTypes: ApplicationTypeRow[] = await prisma.applicationType.findMany({
+    where: { active: true },
+    orderBy: [{ sortOrder: 'asc' }, { name: 'asc' }],
+    select: {
+      id: true,
+      name: true,
+      slug: true,
+      description: true,
+      category: true,
+      questions: true,
+      active: true,
+      sortOrder: true,
+    },
+  });
+
+  const types: PublicApplicationType[] = rawTypes.map((type: ApplicationTypeRow) => ({
     ...type,
     questions: type.questions as ApplicationQuestion[],
-  })) as PublicApplicationType[];
+    reviewerRoleIds: [],
+  }));
 
   return (
     <>
