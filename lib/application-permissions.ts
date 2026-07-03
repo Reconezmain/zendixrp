@@ -1,8 +1,8 @@
-import { UserRole } from '@prisma/client';
 import { prisma } from '@/lib/prisma';
+import type { UserRoleName } from '@/lib/auth';
 
 type PermissionUser = {
-  role: UserRole;
+  role: UserRoleName;
   discordRoles: unknown;
 };
 
@@ -13,14 +13,14 @@ export function jsonStringArray(value: unknown): string[] {
 }
 
 export function hasReviewerRole(user: PermissionUser, reviewerRoleIds: unknown) {
-  if (user.role === UserRole.ADMIN) return true;
+  if (user.role === 'ADMIN') return true;
   const userRoles = new Set(jsonStringArray(user.discordRoles));
   return jsonStringArray(reviewerRoleIds).some((roleId) => userRoles.has(roleId));
 }
 
 // null means unrestricted because ADMIN always overrides type-specific roles.
 export async function getReviewableTypeIds(user: PermissionUser): Promise<string[] | null> {
-  if (user.role === UserRole.ADMIN) return null;
+  if (user.role === 'ADMIN') return null;
   const types = await prisma.applicationType.findMany({
     select: { id: true, reviewerRoleIds: true },
   });
@@ -28,7 +28,7 @@ export async function getReviewableTypeIds(user: PermissionUser): Promise<string
 }
 
 export async function canReviewApplication(user: PermissionUser, applicationId: string) {
-  if (user.role === UserRole.ADMIN) return true;
+  if (user.role === 'ADMIN') return true;
   const application = await prisma.application.findUnique({
     where: { id: applicationId },
     select: { applicationType: { select: { reviewerRoleIds: true } } },

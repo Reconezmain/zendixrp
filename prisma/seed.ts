@@ -1,4 +1,4 @@
-import { ApplicationStatus, PrismaClient, StaffGroup, UserRole } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { parseOfficialRules } from './rules-parser';
@@ -33,7 +33,7 @@ async function main() {
   const admin = seedInitialContent && seedDemoData ? await prisma.user.upsert({
     where: { discordId: 'seed-admin' },
     update: {},
-    create: { discordId: 'seed-admin', username: 'Zendix Ledelsen', role: UserRole.ADMIN },
+    create: { discordId: 'seed-admin', username: 'Zendix Ledelsen', role: 'ADMIN' },
   }) : null;
 
   const posts = [
@@ -81,10 +81,10 @@ async function main() {
   }
 
   const staff = [
-    { name: 'Noah', rank: 'Server Owner', group: StaffGroup.OWNER, discordTag: 'noah.zdx', description: 'Holder retningen, samler teamet og passer på ZendixRP-visionen.', sortOrder: 1 },
-    { name: 'Freja', rank: 'Community Manager', group: StaffGroup.MANAGEMENT, discordTag: 'freja.rp', description: 'Binder community og staff sammen — altid klar på feedback og gode idéer.', sortOrder: 2 },
-    { name: 'Malthe', rank: 'Head Administrator', group: StaffGroup.ADMINISTRATOR, discordTag: 'malthe.admin', description: 'Sikrer fair sagsbehandling og hjælper teamet med de svære beslutninger.', sortOrder: 3 },
-    { name: 'Alma', rank: 'Developer', group: StaffGroup.DEVELOPER, discordTag: 'alma.dev', description: 'Bygger de systemer og små detaljer, der gør byen levende.', sortOrder: 4 },
+    { name: 'Noah', rank: 'Server Owner', group: 'OWNER' as const, discordTag: 'noah.zdx', description: 'Holder retningen, samler teamet og passer på ZendixRP-visionen.', sortOrder: 1 },
+    { name: 'Freja', rank: 'Community Manager', group: 'MANAGEMENT' as const, discordTag: 'freja.rp', description: 'Binder community og staff sammen — altid klar på feedback og gode idéer.', sortOrder: 2 },
+    { name: 'Malthe', rank: 'Head Administrator', group: 'ADMINISTRATOR' as const, discordTag: 'malthe.admin', description: 'Sikrer fair sagsbehandling og hjælper teamet med de svære beslutninger.', sortOrder: 3 },
+    { name: 'Alma', rank: 'Developer', group: 'DEVELOPER' as const, discordTag: 'alma.dev', description: 'Bygger de systemer og små detaljer, der gør byen levende.', sortOrder: 4 },
   ];
 
   if (seedInitialContent && seedDemoData) {
@@ -158,7 +158,7 @@ async function main() {
       data: {
         userId: demo.id,
         type: 'Whitelist',
-        status: ApplicationStatus.IN_REVIEW,
+        status: 'IN_REVIEW',
         answers: { characterName: 'Oliver Storm', age: '24', motivation: 'Jeg vil skabe langsigtede historier med andre spillere.' },
       },
     });

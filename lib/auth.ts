@@ -1,10 +1,10 @@
 import { createHash, randomBytes, timingSafeEqual } from 'crypto';
-import { UserRole } from '@prisma/client';
 import { cookies } from 'next/headers';
 import { prisma } from '@/lib/prisma';
 
 const SESSION_COOKIE = 'zendix_session';
 const SESSION_AGE = 60 * 60 * 24 * 30;
+export type UserRoleName = 'USER' | 'STAFF' | 'ADMIN';
 
 function hashToken(token: string) {
   const secret = process.env.AUTH_SECRET;
@@ -18,18 +18,18 @@ function envIds(name: string) {
   return (process.env[name] || '').split(',').map((id) => id.trim()).filter(Boolean);
 }
 
-export function resolveConfiguredRole(discordId: string, discordRoles: unknown): UserRole {
-  if (envIds('ADMIN_DISCORD_IDS').includes(discordId)) return UserRole.ADMIN;
+export function resolveConfiguredRole(discordId: string, discordRoles: unknown): UserRoleName {
+  if (envIds('ADMIN_DISCORD_IDS').includes(discordId)) return 'ADMIN';
 
   // Never preserve an old database role when Discord role sync is not configured.
-  if (!process.env.DISCORD_GUILD_ID) return UserRole.USER;
+  if (!process.env.DISCORD_GUILD_ID) return 'USER';
 
   const roles = Array.isArray(discordRoles)
     ? discordRoles.filter((role): role is string => typeof role === 'string')
     : [];
-  if (roles.some((role) => envIds('DISCORD_ADMIN_ROLE_IDS').includes(role))) return UserRole.ADMIN;
-  if (roles.some((role) => envIds('DISCORD_STAFF_ROLE_IDS').includes(role))) return UserRole.STAFF;
-  return UserRole.USER;
+  if (roles.some((role) => envIds('DISCORD_ADMIN_ROLE_IDS').includes(role))) return 'ADMIN';
+  if (roles.some((role) => envIds('DISCORD_STAFF_ROLE_IDS').includes(role))) return 'STAFF';
+  return 'USER';
 }
 
 export async function createSession(userId: string) {

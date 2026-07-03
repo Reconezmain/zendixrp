@@ -1,4 +1,3 @@
-import { UserRole } from '@prisma/client';
 import { cookies } from 'next/headers';
 import { NextRequest, NextResponse } from 'next/server';
 import { createSession, discordAvatar, resolveConfiguredRole } from '@/lib/auth';
@@ -9,16 +8,16 @@ type DiscordMember = { roles?: string[] };
 
 async function resolveGuildRole(accessToken: string, discordId: string) {
   const forcedAdmins = (process.env.ADMIN_DISCORD_IDS || '').split(',').map((id) => id.trim()).filter(Boolean);
-  if (forcedAdmins.includes(discordId)) return { role: UserRole.ADMIN, roles: [] as string[] };
+  if (forcedAdmins.includes(discordId)) return { role: 'ADMIN' as const, roles: [] as string[] };
 
   const guildId = process.env.DISCORD_GUILD_ID;
-  if (!guildId) return { role: UserRole.USER, roles: [] as string[] };
+  if (!guildId) return { role: 'USER' as const, roles: [] as string[] };
 
   const memberResponse = await fetch(`https://discord.com/api/users/@me/guilds/${guildId}/member`, {
     headers: { Authorization: `Bearer ${accessToken}` },
     cache: 'no-store',
   });
-  if (!memberResponse.ok) return { role: UserRole.USER, roles: [] as string[] };
+  if (!memberResponse.ok) return { role: 'USER' as const, roles: [] as string[] };
 
   const member = await memberResponse.json() as DiscordMember;
   const roles = member.roles || [];
